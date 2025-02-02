@@ -22,10 +22,10 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Restore dependencies
-        run: dotnet restore src/
+        run: dotnet restore lib/
 
       - name: Build
-        run: dotnet build --configuration Release src/
+        run: dotnet build --configuration Release lib/
 
       - name: Run application
-        run: dotnet run --project src/
+        run: dotnet run --project lib/
