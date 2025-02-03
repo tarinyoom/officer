@@ -1,4 +1,4 @@
-name: Build and Run F#
+name: Build and Test F# on Windows
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-test:
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
@@ -22,10 +22,10 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Restore dependencies
-        run: dotnet restore lib/
+        run: dotnet restore
 
-      - name: Build
-        run: dotnet build --configuration Release lib/
+      - name: Build the solution
+        run: dotnet build --configuration Release
 
-      - name: Run application
-        run: dotnet run --project lib/
+      - name: Run tests
+        run: dotnet test --no-build --configuration Release --verbosity normal
