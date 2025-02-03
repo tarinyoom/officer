@@ -1,7 +1,7 @@
-module MyLib.Tests
+module Library.Tests
 
 open Xunit
-open FsUnit
+open FsUnit.Xunit
 open MyLib
 
 [<Fact>]
