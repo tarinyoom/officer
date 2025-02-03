@@ -10,7 +10,10 @@ on:
 
 jobs:
   build-and-test:
-    runs-on: windows-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
 
     steps:
       - name: Checkout repository
@@ -20,6 +23,12 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: 9.0.x
+
+      - name: Install fantomas
+        run: dotnet tool install -g fantomas
+
+      - name: Check formatting
+        run: fantomas --check .
 
       - name: Restore dependencies
         run: dotnet restore
