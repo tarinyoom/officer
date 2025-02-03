@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Library.Tests.fs" />
+    <Compile Include="MyFunction.Tests.fs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\lib\lib.fsproj" />
+    <ProjectReference Include="..\Lib\Lib.fsproj" />
   </ItemGroup>
 
 </Project>

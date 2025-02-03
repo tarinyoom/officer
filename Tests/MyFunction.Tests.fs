@@ -2,7 +2,7 @@ module Library.Tests
 
 open Xunit
 open FsUnit.Xunit
-open MyLib
+open MyFunction
 
 [<Fact>]
 let ``Greet function should return correct string`` () =
